@@ -17,5 +17,5 @@ GNU GPL v3
 
 ## preview
 
-![light](images/Preview-Light.jpg)
-![dark](images/Preview-Dark.jpg)
+![light](images/Preview-Light.jpeg)
+![dark](images/Preview-Dark.jpeg)
