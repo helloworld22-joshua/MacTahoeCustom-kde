@@ -24,7 +24,7 @@ else
   LATTE_DIR="$HOME/.config/latte"
 fi
 
-THEME_NAME=MacTahoe
+THEME_NAME=MacTahoeCustom
 
 COLOR_VARIANTS=('-Light' '-Dark')
 

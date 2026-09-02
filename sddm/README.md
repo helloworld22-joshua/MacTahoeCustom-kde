@@ -1,5 +1,4 @@
-
-MacTahoe sddm theme for KDE Plasma desktop.
+MacTahoeCustom sddm theme for KDE Plasma desktop.
 
 ## Installation
 

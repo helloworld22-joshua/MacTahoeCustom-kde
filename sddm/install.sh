@@ -61,7 +61,7 @@ install () {
 }
 
 if [[ "$UID" -eq "$ROOT_UID" ]]; then
-  name="MacTahoe"
+  name="MacTahoeCustom"
   color="-Light" && install
   color="-Dark" && install
   echo

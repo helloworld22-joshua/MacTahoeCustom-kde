@@ -12,7 +12,7 @@ else
   DEST_DIR="$HOME"
 fi
 
-THEME_NAME=MacTahoe
+THEME_NAME=MacTahoeCustom
 
 COLOR_VARIANTS=('-Light' '-Dark')
 SCALE_VARIANTS=('' '-1.25x' '-1.5x')
