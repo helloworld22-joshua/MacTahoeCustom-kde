@@ -1,10 +1,13 @@
 # Changes
 
+Some changes to the [MacTahoe](https://github.com/vinceliuice/MacTahoe-kde) theme.
+
 - `desktoptheme`: Changed the dark panel color to fit the rest of the theme.
 - `color-schemes`: Added more transparency (might make text harder to read).
 - `custom/Konsole`: Added a profile and color-scheme for Konsole (must be added manually to `~/.local/share/konsole/`)
 - `custom/KWrite`: Added a color-scheme for KWrite (must be added manually to `~/.local/share/org.kde.syntax-highlighting/themes/`)
 - Renamed all instances of "MacTahoe" to "MacTahoeCustom" to prevent clashing with the original theme (except for vinceliuice/MacTahoe to prevent breaking links).
+- Fixed the `install.sh` file because the name argument didn't work. I still decided on simply renaming all instances since the script doesn't change the metadata.
 
 # <img src="https://github.com/vinceliuice/MacTahoe-gtk-theme/raw/main/Tahoe.png" alt="Logo" align="right" /> MacTahoeCustom KDE Theme
 

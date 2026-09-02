@@ -12,7 +12,8 @@ else
   DEST_DIR="$HOME"
 fi
 
-THEME_NAME=MacTahoeCustom
+SRC_NAME=MacTahoe
+THEME_NAME=MacTahoe
 
 COLOR_VARIANTS=('-Light' '-Dark')
 SCALE_VARIANTS=('' '-1.25x' '-1.5x')
@@ -73,14 +74,14 @@ install() {
   [[ -d "${WALLPAPER_DIR}/${name}" ]] && rm -rf ${WALLPAPER_DIR}/${name}
   [[ -d "${WALLPAPER_DIR}/${name}${color}" ]] && rm -rf ${WALLPAPER_DIR}/${name}${color}
 
-  cp -r ${SRC_DIR}/Kvantum/${name}                                                   ${KVANTUM_DIR}
-  cp -r ${SRC_DIR}/color-schemes/${name}${ELSE_COLOR}.colors                         ${SCHEMES_DIR}
-  cp -r ${SRC_DIR}/plasma/desktoptheme/${name}${color}                               ${PLASMA_DIR}
-  cp -r ${SRC_DIR}/plasma/desktoptheme/icons                                         ${PLASMA_DIR}/${name}${color}
-  cp -r ${SRC_DIR}/plasma/layout-templates/org.github.desktop.MacOS*                 ${LAYOUT_DIR}
-  cp -r ${SRC_DIR}/plasma/look-and-feel/com.github.vinceliuice.${name}${color}       ${LOOKFEEL_DIR}
-  cp -r ${SRC_DIR}/wallpapers/${name}                                                ${WALLPAPER_DIR}
-  cp -r ${SRC_DIR}/wallpapers/${name}${color}                                        ${WALLPAPER_DIR}
+  cp -r ${SRC_DIR}/Kvantum/${SRC_NAME}                                                   ${KVANTUM_DIR}/${name}
+  cp -r ${SRC_DIR}/color-schemes/${SRC_NAME}${ELSE_COLOR}.colors                         ${SCHEMES_DIR}/${name}${ELSE_COLOR}.colors
+  cp -r ${SRC_DIR}/plasma/desktoptheme/${SRC_NAME}${color}                               ${PLASMA_DIR}/${name}${color}
+  cp -r ${SRC_DIR}/plasma/desktoptheme/icons                                             ${PLASMA_DIR}/${name}${color}
+  cp -r ${SRC_DIR}/plasma/layout-templates/org.github.desktop.MacOS*                     ${LAYOUT_DIR}
+  cp -r ${SRC_DIR}/plasma/look-and-feel/com.github.vinceliuice.${SRC_NAME}${color}       ${LOOKFEEL_DIR}/com.github.vinceliuice.${name}${color}
+  cp -r ${SRC_DIR}/wallpapers/${SRC_NAME}                                                ${WALLPAPER_DIR}/${name}
+  cp -r ${SRC_DIR}/wallpapers/${SRC_NAME}${color}                                        ${WALLPAPER_DIR}/${name}${color}
 }
 
 install_aurorae() {
@@ -104,10 +105,10 @@ install_aurorae() {
   [[ -d "${AURORA_INSTALL_DIR}" ]] && rm -rf                                               "${AURORA_INSTALL_DIR}"
 
   mkdir -p                                                                                 "${AURORA_INSTALL_DIR}"
-  cp -r "${SRC_DIR}/aurorae/${name}${color}${scale}"/*.svg                                 "${AURORA_INSTALL_DIR}"
-  cp -r "${SRC_DIR}/aurorae/${ELSE_COLOR}rc"                                               "${AURORA_INSTALL_DIR}/${name}${color}${scale}rc"
-  cp -r "${SRC_DIR}/aurorae/icons${color}"/*.svg                                           "${AURORA_INSTALL_DIR}"
-  cp -r "${SRC_DIR}/aurorae"/{metadata.desktop,metadata.json}                              "${AURORA_INSTALL_DIR}"
+  cp -r "${SRC_DIR}/aurorae/${SRC_NAME}${color}${scale}"/*.svg                            "${AURORA_INSTALL_DIR}"
+  cp -r "${SRC_DIR}/aurorae/${ELSE_COLOR}rc"                                              "${AURORA_INSTALL_DIR}/${name}${color}${scale}rc"
+  cp -r "${SRC_DIR}/aurorae/icons${color}"/*.svg                                          "${AURORA_INSTALL_DIR}"
+  cp -r "${SRC_DIR}/aurorae"/{metadata.desktop,metadata.json}                             "${AURORA_INSTALL_DIR}"
   sed -i "s/theme_name/${name}${color}${scale}/g" "${AURORA_INSTALL_DIR}/metadata.desktop" "${AURORA_INSTALL_DIR}/metadata.json"
 }
 
@@ -122,8 +123,8 @@ while [[ "$#" -gt 0 ]]; do
       shift 2
       ;;
     -n|--name)
-      name="${1}"
-      shift
+      name="${2}"
+      shift 2
       ;;
     -c|--color)
       shift
